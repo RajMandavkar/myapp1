@@ -1,0 +1,23 @@
+<div class="filters">
+  <input type="text" placeholder="Search products..." [(ngModel)]="searchText" />
+
+  <select [(ngModel)]="selectedCategory">
+    <option value="">All Categories</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Accessories">Accessories</option>
+  </select>
+
+  <label>
+    Max Price: ₹{{ maxPrice }}
+    <input type="range" min="0" max="15000" step="500" [(ngModel)]="maxPrice" />
+  </label>
+</div>
+
+<hr />
+
+<div class="product" *ngFor="let product of filteredProducts">
+  <h4>{{ product.name }}</h4>
+  <p>Category: {{ product.category }}</p>
+  <p>Price: ₹{{ product.price }}</p>
+</div>

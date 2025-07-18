@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Parent Component</h1>
+            <form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="Enter Your First name" #pComFirst
+                            (keyup)="0">
+                    </div>
+                    <br><br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="Enter Your Last name" #pComLast
+                            (keyup)="0">
+                    </div>
+                    <br><br>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" placeholder="Enter Your Contact Number" #pContact
+                            (keyup)="0">
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <app-child-component [pDataFirstName]="pComFirst.value" [pDataLastName]="pComLast.value"
+                [pDataContact]="pContact.value">
+            </app-child-component>
+        </div>
+    </div>
+</div>
+
