@@ -6,3 +6,8 @@
   <button (click)="onclick()" class="neumorphic-button">Sign In</button>
 </div>
 
+<div *ngFor="let user of users">
+    <h1>{{user.userName}}</h1>
+    <h1>{{user.email}}</h1>
+    <h1>{{user.pass}}</h1>
+</div>

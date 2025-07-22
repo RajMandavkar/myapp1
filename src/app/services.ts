@@ -9,11 +9,9 @@ import { inject } from '@angular/core';
 
 export class Services {
   http =inject(HttpClient)
-  url= "localhost:3000/users";
+  url= "http://localhost:3000/users";
 
   getData(){
-    this.http.get(this.url);
-  }
-  
-  
+    return this.http.get(this.url);
+  }  
 }
