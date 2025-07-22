@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class Services {
   searchText: string = '';
-  selectedCategory: string = '';
-  maxPrice: number = 10000;
+  // selectedCategory: string = '';
+  // maxPrice: number = 10000;
 
   products = [
     { name: 'Red T-Shirt', category: 'Clothing', price: 500 },
@@ -24,9 +24,9 @@ export class Services {
   get filteredProducts() {
     return this.products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(this.searchText.toLowerCase());
-      const matchesCategory = this.selectedCategory ? product.category === this.selectedCategory : true;
-      const matchesPrice = product.price <= this.maxPrice;
-      return matchesSearch && matchesCategory && matchesPrice;
+      // const matchesCategory = this.selectedCategory ? product.category === this.selectedCategory : true;
+      // const matchesPrice = product.price <= this.maxPrice;
+      return matchesSearch;
     });
   }
 
