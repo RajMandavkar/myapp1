@@ -14,4 +14,6 @@ export class Services {
   getData(){
     return this.http.get(this.url);
   }  
+
+   
 }

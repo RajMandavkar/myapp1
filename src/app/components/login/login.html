@@ -5,9 +5,29 @@
   <input type="password" [(ngModel)]="loginData.pass" class="neumorphic-input" placeholder="password">
   <button (click)="onclick()" class="neumorphic-button">Sign In</button>
 </div>
-
-<div *ngFor="let user of users">
+<!-- 
+<div>
     <h1>{{user.userName}}</h1>
     <h1>{{user.email}}</h1>
     <h1>{{user.pass}}</h1>
-</div>
+</div> -->
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">userName</th>
+      <th scope="col">email</th>
+      <th scope="col">pass</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users, let i =index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.userName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.pass}}</td>
+    </tr>    
+  </tbody>
+</table>

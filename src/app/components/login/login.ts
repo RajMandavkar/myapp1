@@ -27,15 +27,36 @@ export class Login implements OnInit {
   users: any[] = [];
 
   onclick() {
-    this.http.post("http://localhost:3000/users", this.loginData).subscribe((res: any) => {
+  this.http.post("http://localhost:3000/users", this.loginData).subscribe({
+    
+    next: (res: any) => {
+      debugger
       console.log('User added:', res);
-    });
-  }
+      
+      
+    },
+    error: (err) => {
+      console.error('Error occurred:', err);
+      alert('Something went wrong while adding user');
+    },
+  });
+}
 
   ngOnInit() {
-    this.service.getData().subscribe((data: any) => {
-      this.users = data;
-      console.log('Users loaded:', data);
-    });
+    // this.service.getData().subscribe((data: any) => {
+    //   this.users = data;
+    //   console.log('Users loaded:', data); 
+    // });
+    debugger
+    this.http.get("http://localhost:3000/users").subscribe((data: any)=>{
+          debugger
+          this.users = data
+          console.log('Users loaded:', data);
+      
+      })
+    
+    
   }
+
+ 
 }
